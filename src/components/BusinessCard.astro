@@ -1,0 +1,169 @@
+---
+type Props = {
+	label: string;
+	name: string;
+	role: string;
+	skills: string;
+	email: string;
+};
+
+const { label, name, role, skills, email } = Astro.props;
+---
+
+<div class="business-card" tabindex="0">
+	<div class="card-header">
+		<p class="card-label">{label}</p>
+	</div>
+
+	<div class="card-body">
+		<p class="card-name">{name}</p>
+		<p class="card-role">{role}</p>
+	</div>
+
+	<div class="card-footer">
+		<p>{skills}</p>
+		<p>{email}</p>
+	</div>
+</div>
+
+<style>
+	.business-card {
+		width: min(100%, 380px);
+		aspect-ratio: 1.62;
+		padding: 28px;
+		border: 1px solid currentColor;
+		border-radius: 8px;
+		color: #ff914d;
+		background: hsl(154 50% 5%);
+		box-shadow:
+			0 34px 80px hsl(154 80% 2% / 0.65),
+			0 0 18px hsl(28 100% 65% / 0.32),
+			inset 0 0 18px hsl(28 100% 65% / 0.08);
+		text-shadow: 0 0 5px currentColor;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		transform:
+			translateY(-16px)
+			rotateX(-7deg)
+			rotateY(35deg)
+			rotateZ(-1deg);
+		transform-origin: center;
+		transition:
+			transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+			box-shadow 0.5s ease,
+			background 0.5s ease;
+		animation: float-card 4.5s ease-in-out infinite;
+		will-change: transform;
+		outline: none;
+	}
+
+	.business-card:hover,
+	.business-card:focus-visible {
+		transform:
+			translateY(0)
+			rotateX(0deg)
+			rotateY(0deg)
+			rotateZ(0deg);
+		animation-play-state: paused;
+		background: hsl(154 46% 6%);
+		box-shadow:
+			0 18px 44px hsl(154 80% 2% / 0.55),
+			0 0 12px hsl(28 100% 65% / 0.24),
+			inset 0 0 12px hsl(28 100% 65% / 0.06);
+	}
+
+	.card-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.card-label,
+	.card-name,
+	.card-role,
+	.card-footer p {
+		margin: 0;
+	}
+
+	.card-label {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.card-body {
+		display: grid;
+		gap: 10px;
+	}
+
+	.card-name {
+		font-size: clamp(2rem, 4vw, 2.75rem);
+		font-weight: 800;
+		line-height: 0.9;
+		letter-spacing: -0.07em;
+	}
+
+	.card-role {
+		max-width: 280px;
+		font-size: 13px;
+		line-height: 1.45;
+		color: color-mix(in oklab, currentColor 78%, white);
+	}
+
+	.card-footer {
+		display: grid;
+		gap: 6px;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 11px;
+		line-height: 1.45;
+		color: color-mix(in oklab, currentColor 82%, white);
+	}
+
+	@keyframes float-card {
+		0%,
+		100% {
+			translate: 0 0;
+		}
+
+		50% {
+			translate: 0 -12px;
+		}
+	}
+
+	@media (max-width: 860px) {
+		.business-card {
+			width: min(100%, 360px);
+			transform:
+				translateY(-8px)
+				rotateX(-5deg)
+				rotateY(18deg)
+				rotateZ(-1deg);
+		}
+
+		.business-card:hover,
+		.business-card:focus-visible {
+			transform: none;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.business-card {
+			padding: 22px;
+		}
+
+		.card-name {
+			font-size: 2rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.business-card {
+			animation: none;
+			transition: none;
+		}
+	}
+</style>

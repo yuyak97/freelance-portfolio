@@ -1,7 +1,8 @@
 # Astro Starter Kit: Basics
 
 ```sh
-npm create astro@latest -- --template basics
+# If we have nix
+nix-shell -p nodejs_22
 ```
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
