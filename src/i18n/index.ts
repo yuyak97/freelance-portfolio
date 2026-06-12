@@ -10,7 +10,7 @@ const ja = {
 
   heroEyebrow: "Portfolio",
   heroLead:
-    "信頼性が高く、安全で、よく考えられたソフトウェアを作るソフトウェアエンジニアです。",
+    "フランスを拠点に活動するソフトウェアエンジニアです。東京とフランスの企業で培った開発経験をもとに、現在はフリーランスとしてWebアプリケーションやIoT関連プロダクトの設計・開発に携わっています。",
 
   heroLinkProjects: "Projects",
   heroLinkPublications: "Publications",
@@ -25,8 +25,15 @@ const ja = {
   projectOneLabel: "Open Source",
   projectOneTitle: "react-native-websocket-self-signed",
   projectOneBody:
-    "自己署名証明書を利用した WebSocket サーバーへ React Native から接続するためのライブラリです。",
+    "自己署名証明書を利用した WebSocket サーバーへ React Native から接続するためのライブラリを実装し公開しました。IoTデバイスのLAN内の通信を想定して実装しました。",
   projectOneLink: "GitHub で見る",
+
+  projectTwoLabel: "Startup Project",
+  projectTwoTitle: "子育て世帯向けマップアプリ",
+  projectTwoBody:
+    "フランスの起業家とデザイナーと協業し、Google Maps API を活用したクロスプラットフォームアプリを開発しています。",
+  projectTwoStack: "React Native / Expo / NestJS / Google Maps API",
+  projectTwoImageAlt: "子育て世帯向けマップアプリの画面",
 
   publicationsEyebrow: "Publications",
   publicationsTitle: "執筆実績",
@@ -36,16 +43,19 @@ const ja = {
   publicationOneTitle: "日経ソフトウエア 2025年1月号 記事寄稿",
   publicationOneBody:
     "日経ソフトウエア 2025年1月号にて、書籍管理アプリの実装例に関する記事を執筆しました。バーコードを読み取ってISBNを取得し、楽天ブックスAPIから書籍情報を取得・保存・表示する方法を紹介しています。",
+  publicationOneLink: "Amazon で見る",
 
   publicationTwoMeta: "Magazine",
   publicationTwoTitle: "日経ソフトウエア 2024年1月号 記事寄稿",
   publicationTwoBody:
     "日経ソフトウエア 2024年1月号にて、OCR翻訳アプリの実装例に関する記事を執筆しました。画像から文字を抽出し、DeepL翻訳APIを使って翻訳結果を取得・保存する方法を紹介しています。",
+  publicationTwoLink: "Amazon で見る",
 
   aboutEyebrow: "About",
   aboutTitle: "Engineering with security in mind.",
   aboutBody:
-    "フロントエンド、モバイル、バックエンド、アーキテクチャを横断して開発しています。React / React Native / TypeScript / Go を中心に、シンプルで速く、保守しやすく、運用しやすいプロダクト開発を得意としています。",
+    "大学卒業後、タブレット学習向けICT教材を開発するスタートアップでキャリアを開始しました。その後、受託開発企業で複数の大型案件に携わり、フロントエンド、モバイル、バックエンド、アーキテクチャを横断した開発経験を積みました。その後、フランスのスマートビルディングのプロダクトを開発している企業に入社し、ハードウェアとソフトウェアを組み合わせたIoTプロダクトの設計・開発に携わりました。現場で運用されるプロダクトを通じて、IoT領域の知見を深めてきました。これまでのスタートアップ、受託開発、IoTプロダクト開発、OSS開発での経験を活かし、シンプルで速く、保守しやすく、運用しやすいプロダクト開発を心がけています。",
+  aboutSkills: "TypeScript / Go / Rust / OCaml / React / React Native / Astro",
 
   contactEyebrow: "Contact",
   contactTitle: "気になることがあれば、お気軽にご連絡ください。",
@@ -86,6 +96,13 @@ const en = {
     "A React Native library for connecting to WebSocket servers using self-signed certificates.",
   projectOneLink: "View on GitHub",
 
+  projectTwoLabel: "Startup Project",
+  projectTwoTitle: "Kid-friendly places map",
+  projectTwoBody:
+    "A cross-platform Google Maps app developed in collaboration with a business professional and a designer for a startup project.",
+  projectTwoStack: "React Native / Expo / NestJS / Google Maps API",
+  projectTwoImageAlt: "Kid-friendly places map application screen",
+
   publicationsEyebrow: "Publications",
   publicationsTitle: "Technical writing",
   publicationsBody: "Magazine contributions and technical writing.",
@@ -93,15 +110,18 @@ const en = {
   publicationOneMeta: "Magazine",
   publicationOneTitle: "Nikkei Software",
   publicationOneBody: "Contributed a technical article.",
+  publicationOneLink: "View on Amazon",
 
   publicationTwoMeta: "Magazine",
   publicationTwoTitle: "Nikkei Software",
   publicationTwoBody: "Contributed a second technical article.",
+  publicationTwoLink: "View on Amazon",
 
   aboutEyebrow: "About",
   aboutTitle: "Engineering with security in mind.",
   aboutBody:
     "I work across frontend, mobile, backend, and architecture. I mainly work with React, React Native, TypeScript, and Go, and I like products that are simple, fast, maintainable, and easy to operate. Started my career as a ",
+  aboutSkills: "TypeScript / Go / Rust / OCaml / React / React Native / Astro",
 
   contactEyebrow: "Contact",
   contactTitle: "Feel free to reach out.",
