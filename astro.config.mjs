@@ -6,10 +6,18 @@ import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import react from "@astrojs/react";
 import icon from "astro-icon";
+import { fileURLToPath, URL } from "node:url";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://example.com",
+  vite: {
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+      },
+    },
+  },
   integrations: [
     expressiveCode({
       themes: ["github-dark"],
