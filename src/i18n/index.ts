@@ -33,12 +33,14 @@ const ja = {
   publicationsBody: "技術記事や雑誌への寄稿実績です。",
 
   publicationOneMeta: "Magazine",
-  publicationOneTitle: "日経ソフトウエア",
-  publicationOneBody: "技術記事を寄稿しました。",
+  publicationOneTitle: "日経ソフトウエア 2025年1月号 記事寄稿",
+  publicationOneBody:
+    "日経ソフトウエア 2025年1月号にて、書籍管理アプリの実装例に関する記事を執筆しました。バーコードを読み取ってISBNを取得し、楽天ブックスAPIから書籍情報を取得・保存・表示する方法を紹介しています。",
 
   publicationTwoMeta: "Magazine",
-  publicationTwoTitle: "日経ソフトウエア",
-  publicationTwoBody: "2回目の技術記事を寄稿しました。",
+  publicationTwoTitle: "日経ソフトウエア 2024年1月号 記事寄稿",
+  publicationTwoBody:
+    "日経ソフトウエア 2024年1月号にて、OCR翻訳アプリの実装例に関する記事を執筆しました。画像から文字を抽出し、DeepL翻訳APIを使って翻訳結果を取得・保存する方法を紹介しています。",
 
   aboutEyebrow: "About",
   aboutTitle: "Engineering with security in mind.",

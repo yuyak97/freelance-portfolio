@@ -3,405 +3,425 @@ import BusinessCard from "@/components/BusinessCard.astro";
 import type { Locale, TranslationSchema } from "@/i18n";
 
 type Props = {
-	locale: Locale;
-	t: TranslationSchema;
+  locale: Locale;
+  t: TranslationSchema;
 };
 
 const { locale, t } = Astro.props;
 ---
 
 <main class="portfolio-shell" lang={locale}>
-	<aside class="card-panel" aria-label="Profile card">
-		<BusinessCard
-			label={t.cardLabel}
-			name={t.cardName}
-			role={t.cardRole}
-			skills={t.cardSkills}
-			email={t.cardEmail}
-		/>
-	</aside>
+  <aside class="card-panel" aria-label="Profile card">
+    <BusinessCard
+      label={t.cardLabel}
+      name={t.cardName}
+      role={t.cardRole}
+      skills={t.cardSkills}
+      email={t.cardEmail}
+    />
+  </aside>
 
-	<section class="content-panel" aria-label="Portfolio content">
-		<section class="snap-section hero-section">
+  <section class="content-panel" aria-label="Portfolio content">
+    <section class="snap-section hero-section">
+      <p class="eyebrow">{t.heroEyebrow}</p>
 
-			<p class="eyebrow">{t.heroEyebrow}</p>
-
-			<pre class="ascii-title" aria-label="Yuya K">
+      <pre
+        class="ascii-title"
+        aria-label="Yuya K">
 __   __                 _  __
-\ \ / /   _   _ _   _  | |/ /
+\ \ / /   _ _   _ _   _| |/ /
  \ V / | | | | | | | | | ' /
   | || |_| | |_| | |_| | . \
   |_| \__,_|\__, |\__,_|_|\_\
             |___/
 			</pre>
 
-			<p class="lead">{t.heroLead}</p>
+      <p class="lead">{t.heroLead}</p>
 
-			<nav class="hero-links" aria-label="Primary links">
-				<a href="#about">{t.heroLinkAbout}</a>
-				<a href="#projects">{t.heroLinkProjects}</a>
-				<a href="#publications">{t.heroLinkPublications}</a>
-				<a href="#contact">{t.heroLinkContact}</a>
-				<a href="https://github.com/yuyak97" target="_blank" rel="noreferrer">
-					{t.heroLinkGithub}
-				</a>
-			</nav>
-		</section>
+      <nav class="hero-links" aria-label="Primary links">
+        <a href="#about">{t.heroLinkAbout}</a>
+        <a href="#projects">{t.heroLinkProjects}</a>
+        <a href="#publications">{t.heroLinkPublications}</a>
+        <a href="#contact">{t.heroLinkContact}</a>
+        <a href="https://github.com/yuyak97" target="_blank" rel="noreferrer">
+          {t.heroLinkGithub}
+        </a>
+      </nav>
+    </section>
 
-		<section class="snap-section" id="about">
-			<p class="eyebrow">{t.aboutEyebrow}</p>
-			<h2>{t.aboutTitle}</h2>
-			<p>{t.aboutBody}</p>
-		</section>
+    <section class="snap-section" id="about">
+      <p class="eyebrow">{t.aboutEyebrow}</p>
+      <h2>{t.aboutTitle}</h2>
+      <p>{t.aboutBody}</p>
+    </section>
 
-		<section class="snap-section" id="projects">
-			<p class="eyebrow">{t.projectsEyebrow}</p>
-			<h2>{t.projectsTitle}</h2>
-			<p>{t.projectsBody}</p>
+    <section class="snap-section" id="projects">
+      <p class="eyebrow">{t.projectsEyebrow}</p>
+      <h2>{t.projectsTitle}</h2>
+      <p>{t.projectsBody}</p>
 
-			<div class="project-list">
-				<article class="project-card">
-					<p class="project-label">{t.projectOneLabel}</p>
-					<h3>{t.projectOneTitle}</h3>
-					<p>{t.projectOneBody}</p>
-					<a
-						class="text-link"
-						href="https://github.com/yuyak97/react-native-websocket-self-signed"
-						target="_blank"
-						rel="noreferrer"
-					>
-						{t.projectOneLink}
-					</a>
-				</article>
-			</div>
-		</section>
+      <div class="project-list">
+        <article class="project-card">
+          <p class="project-label">{t.projectOneLabel}</p>
+          <h3>{t.projectOneTitle}</h3>
+          <p>{t.projectOneBody}</p>
+          <a
+            class="text-link"
+            href="https://github.com/yuyak97/react-native-websocket-self-signed"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t.projectOneLink}
+          </a>
+        </article>
+      </div>
+    </section>
 
-		<section class="snap-section" id="publications">
-			<p class="eyebrow">{t.publicationsEyebrow}</p>
-			<h2>{t.publicationsTitle}</h2>
-			<p>{t.publicationsBody}</p>
+    <section class="snap-section" id="publications">
+      <p class="eyebrow">{t.publicationsEyebrow}</p>
+      <h2>{t.publicationsTitle}</h2>
+      <p>{t.publicationsBody}</p>
 
-			<ul class="publication-list">
-				<li>
-					<span class="publication-meta">{t.publicationOneMeta}</span>
-					<span class="publication-title">{t.publicationOneTitle}</span>
-					<span class="publication-body">{t.publicationOneBody}</span>
-				</li>
+      <ul class="publication-list">
+        <li>
+          <span class="publication-meta">{t.publicationOneMeta}</span>
+          <span class="publication-title">{t.publicationOneTitle}</span>
+          <span class="publication-body">{t.publicationOneBody}</span>
+        </li>
 
-				<li>
-					<span class="publication-meta">{t.publicationTwoMeta}</span>
-					<span class="publication-title">{t.publicationTwoTitle}</span>
-					<span class="publication-body">{t.publicationTwoBody}</span>
-				</li>
-			</ul>
-		</section>
+        <li>
+          <span class="publication-meta">{t.publicationTwoMeta}</span>
+          <span class="publication-title">{t.publicationTwoTitle}</span>
+          <span class="publication-body">{t.publicationTwoBody}</span>
+        </li>
 
-		<section class="snap-section" id="contact">
-			<p class="eyebrow">{t.contactEyebrow}</p>
-			<h2>{t.contactTitle}</h2>
-			<p>{t.contactBody}</p>
+        <li>
+          <span class="publication-meta">{t.publicationTwoMeta}</span>
+          <span class="publication-title">{t.publicationTwoTitle}</span>
+          <span class="publication-body">{t.publicationTwoBody}</span>
+        </li>
+      </ul>
+    </section>
 
-			<nav class="quick-links" aria-label="Contact links">
-				<a href="mailto:yuyakayama23@gmail.com">{t.contactLinkEmail}</a>
-				<a href="https://github.com/yuyakayama23" target="_blank" rel="noreferrer">
-					{t.contactLinkGithub}
-				</a>
-			</nav>
-		</section>
-	</section>
+    <section class="snap-section" id="contact">
+      <p class="eyebrow">{t.contactEyebrow}</p>
+      <h2>{t.contactTitle}</h2>
+      <p>{t.contactBody}</p>
+
+      <nav class="quick-links" aria-label="Contact links">
+        <a href="mailto:yuyakayama23@gmail.com">{t.contactLinkEmail}</a>
+        <a
+          href="https://github.com/yuyakayama23"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {t.contactLinkGithub}
+        </a>
+      </nav>
+    </section>
+  </section>
 </main>
 
 <style>
-	.portfolio-shell {
-		min-height: 100svh;
-		background:
-			radial-gradient(circle at 18% 18%, hsl(28 100% 58% / 0.13), transparent 34%),
-			radial-gradient(circle at 82% 72%, hsl(220 90% 60% / 0.12), transparent 34%),
-			linear-gradient(135deg, #080a0f, #111827 48%, #0b1120);
-		color: #f8fafc;
-	}
+  .portfolio-shell {
+    min-height: 100svh;
+    background:
+      radial-gradient(
+        circle at 18% 18%,
+        hsl(28 100% 58% / 0.13),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at 82% 72%,
+        hsl(220 90% 60% / 0.12),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #080a0f, #111827 48%, #0b1120);
+    color: #f8fafc;
+  }
 
-	.card-panel {
-		position: fixed;
-		inset: 0 auto 0 0;
-		width: min(42vw, 520px);
-		display: grid;
-		place-items: center;
-		padding: 48px;
-		pointer-events: none;
-		perspective: 1000px;
-	}
+  .card-panel {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(42vw, 520px);
+    display: grid;
+    place-items: center;
+    padding: 48px;
+    pointer-events: none;
+    perspective: 1000px;
+  }
 
-	.card-panel :global(.business-card) {
-		pointer-events: auto;
-	}
+  .card-panel :global(.business-card) {
+    pointer-events: auto;
+  }
 
-	.content-panel {
-		margin-left: min(42vw, 520px);
-		height: 100svh;
-		overflow-y: auto;
-		scroll-snap-type: y mandatory;
-		scroll-behavior: smooth;
-	}
+  .content-panel {
+    margin-left: min(42vw, 520px);
+    height: 100svh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
 
-	.snap-section {
-		min-height: 100svh;
-		scroll-snap-align: start;
-		display: grid;
-		align-content: center;
-		gap: 20px;
-		padding: 80px min(8vw, 96px);
-	}
+  .snap-section {
+    min-height: 100svh;
+    scroll-snap-align: start;
+    display: grid;
+    align-content: center;
+    gap: 20px;
+    padding: 80px min(8vw, 96px);
+  }
 
-	.top-actions {
-		position: absolute;
-		top: 32px;
-		right: min(8vw, 96px);
-	}
+  .top-actions {
+    position: absolute;
+    top: 32px;
+    right: min(8vw, 96px);
+  }
 
-	.locale-link {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 36px;
-		padding: 8px 12px;
-		border: 1px solid hsl(215 20% 76% / 0.26);
-		border-radius: 999px;
-		color: #f8fafc;
-		background: hsl(220 30% 12% / 0.72);
-		text-decoration: none;
-		font-size: 0.85rem;
-		font-weight: 700;
-		transition:
-			transform 0.16s ease,
-			border-color 0.16s ease,
-			background 0.16s ease,
-			color 0.16s ease;
-	}
+  .locale-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 12px;
+    border: 1px solid hsl(215 20% 76% / 0.26);
+    border-radius: 999px;
+    color: #f8fafc;
+    background: hsl(220 30% 12% / 0.72);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition:
+      transform 0.16s ease,
+      border-color 0.16s ease,
+      background 0.16s ease,
+      color 0.16s ease;
+  }
 
-	.locale-link:hover,
-	.locale-link:focus-visible {
-		transform: translateY(-2px);
-		border-color: #ff914d;
-		color: #ff914d;
-		background: hsl(28 100% 58% / 0.16);
-		outline: none;
-	}
+  .locale-link:hover,
+  .locale-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: #ff914d;
+    color: #ff914d;
+    background: hsl(28 100% 58% / 0.16);
+    outline: none;
+  }
 
-	.eyebrow {
-		margin: 0;
-		color: #ff914d;
-		font-size: 0.8rem;
-		font-weight: 800;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-	}
+  .eyebrow {
+    margin: 0;
+    color: #ff914d;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
 
-	h2,
-	h3,
-	p {
-		margin: 0;
-	}
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
 
-	h2 {
-		max-width: 760px;
-		font-size: clamp(2rem, 4vw, 3.5rem);
-		line-height: 0.92;
-		letter-spacing: -0.07em;
-	}
+  h2 {
+    max-width: 760px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.07em;
+  }
 
-	.ascii-title {
-		margin: 0;
-		color: #ff914d;
-		text-shadow: 0 0 5px currentColor;
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-		font-size: clamp(0.72rem, 1.45vw, 1.25rem);
-		font-weight: 700;
-		line-height: 1.08;
-		white-space: pre;
-	}
+  .ascii-title {
+    margin: 0;
+    color: #ff914d;
+    text-shadow: 0 0 5px currentColor;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: clamp(0.72rem, 1.45vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.08;
+    white-space: pre;
+  }
 
-	.lead,
-	.snap-section > p:not(.eyebrow) {
-		max-width: 640px;
-		color: hsl(215 20% 76%);
-		font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-		line-height: 1.75;
-	}
+  .lead,
+  .snap-section > p:not(.eyebrow) {
+    max-width: 640px;
+    color: hsl(215 20% 76%);
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.75;
+  }
 
-	.hero-links,
-	.quick-links {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 12px;
-		margin-top: 24px;
-	}
+  .hero-links,
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
 
-	.hero-links a,
-	.quick-links a,
-	.text-link {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 44px;
-		padding: 10px 16px;
-		border: 1px solid hsl(215 20% 76% / 0.26);
-		border-radius: 999px;
-		color: #f8fafc;
-		background: hsl(220 30% 12% / 0.72);
-		text-decoration: none;
-		font-weight: 700;
-		transition:
-			transform 0.16s ease,
-			border-color 0.16s ease,
-			background 0.16s ease,
-			color 0.16s ease;
-	}
+  .hero-links a,
+  .quick-links a,
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid hsl(215 20% 76% / 0.26);
+    border-radius: 999px;
+    color: #f8fafc;
+    background: hsl(220 30% 12% / 0.72);
+    text-decoration: none;
+    font-weight: 700;
+    transition:
+      transform 0.16s ease,
+      border-color 0.16s ease,
+      background 0.16s ease,
+      color 0.16s ease;
+  }
 
-	.hero-links a:hover,
-	.hero-links a:focus-visible,
-	.quick-links a:hover,
-	.quick-links a:focus-visible,
-	.text-link:hover,
-	.text-link:focus-visible {
-		transform: translateY(-2px);
-		border-color: #ff914d;
-		color: #ff914d;
-		background: hsl(28 100% 58% / 0.16);
-		outline: none;
-	}
+  .hero-links a:hover,
+  .hero-links a:focus-visible,
+  .quick-links a:hover,
+  .quick-links a:focus-visible,
+  .text-link:hover,
+  .text-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: #ff914d;
+    color: #ff914d;
+    background: hsl(28 100% 58% / 0.16);
+    outline: none;
+  }
 
-	.project-list {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		gap: 16px;
-		max-width: 760px;
-		margin-top: 24px;
-	}
+  .project-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    max-width: 760px;
+    margin-top: 24px;
+  }
 
-	.project-card {
-		display: grid;
-		gap: 14px;
-		padding: 20px;
-		border: 1px solid hsl(215 20% 76% / 0.18);
-		border-radius: 20px;
-		background: hsl(220 30% 12% / 0.62);
-		backdrop-filter: blur(16px);
-	}
+  .project-card {
+    display: grid;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid hsl(215 20% 76% / 0.18);
+    border-radius: 20px;
+    background: hsl(220 30% 12% / 0.62);
+    backdrop-filter: blur(16px);
+  }
 
-	.project-label {
-		color: #ff914d;
-		font-size: 0.75rem;
-		font-weight: 800;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
+  .project-label {
+    color: #ff914d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
 
-	.project-card h3 {
-		font-size: 1.35rem;
-		letter-spacing: -0.03em;
-	}
+  .project-card h3 {
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
+  }
 
-	.project-card p:not(.project-label) {
-		color: hsl(215 20% 76%);
-		font-size: 0.95rem;
-		line-height: 1.65;
-	}
+  .project-card p:not(.project-label) {
+    color: hsl(215 20% 76%);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 
-	.text-link {
-		justify-self: start;
-		margin-top: 6px;
-	}
+  .text-link {
+    justify-self: start;
+    margin-top: 6px;
+  }
 
-	.publication-list {
-		display: grid;
-		gap: 18px;
-		max-width: 760px;
-		margin: 24px 0 0;
-		padding: 0;
-		list-style: none;
-	}
+  .publication-list {
+    display: grid;
+    gap: 18px;
+    max-width: 760px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
 
-	.publication-list li {
-		display: grid;
-		gap: 6px;
-		padding-left: 18px;
-		border-left: 2px solid #ff914d;
-	}
+  .publication-list li {
+    display: grid;
+    gap: 6px;
+    padding-left: 18px;
+    border-left: 2px solid #ff914d;
+  }
 
-	.publication-meta {
-		color: #ff914d;
-		font-size: 0.78rem;
-		font-weight: 800;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
+  .publication-meta {
+    color: #ff914d;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
 
-	.publication-title {
-		color: #f8fafc;
-		font-size: clamp(1.15rem, 2vw, 1.45rem);
-		font-weight: 800;
-		letter-spacing: -0.03em;
-	}
+  .publication-title {
+    color: #f8fafc;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
 
-	.publication-body {
-		color: hsl(215 20% 76%);
-		font-size: 1rem;
-		line-height: 1.65;
-	}
+  .publication-body {
+    color: hsl(215 20% 76%);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
 
-	@media (max-width: 860px) {
-		.portfolio-shell {
-			min-height: 100svh;
-		}
+  @media (max-width: 860px) {
+    .portfolio-shell {
+      min-height: 100svh;
+    }
 
-		.card-panel {
-			position: relative;
-			width: auto;
-			min-height: 48svh;
-			padding: 32px 20px 16px;
-		}
+    .card-panel {
+      position: relative;
+      width: auto;
+      min-height: 48svh;
+      padding: 32px 20px 16px;
+    }
 
-		.content-panel {
-			margin-left: 0;
-			height: auto;
-			overflow: visible;
-			scroll-snap-type: none;
-		}
+    .content-panel {
+      margin-left: 0;
+      height: auto;
+      overflow: visible;
+      scroll-snap-type: none;
+    }
 
-		.snap-section {
-			min-height: auto;
-			scroll-snap-align: none;
-			padding: 56px 24px;
-		}
+    .snap-section {
+      min-height: auto;
+      scroll-snap-align: none;
+      padding: 56px 24px;
+    }
 
-		.hero-section {
-			position: relative;
-			padding-top: 72px;
-		}
+    .hero-section {
+      position: relative;
+      padding-top: 72px;
+    }
 
-		.top-actions {
-			top: 24px;
-			right: 24px;
-		}
+    .top-actions {
+      top: 24px;
+      right: 24px;
+    }
 
-		h2 {
-			font-size: clamp(2.6rem, 13vw, 4.5rem);
-		}
+    h2 {
+      font-size: clamp(2.6rem, 13vw, 4.5rem);
+    }
 
-		.ascii-title {
-			font-size: clamp(0.46rem, 2.2vw, 0.75rem);
-			overflow-x: auto;
-		}
-	}
+    .ascii-title {
+      font-size: clamp(0.46rem, 2.2vw, 0.75rem);
+      overflow-x: auto;
+    }
+  }
 
-	@media (max-width: 420px) {
-		.snap-section {
-			padding-inline: 20px;
-		}
+  @media (max-width: 420px) {
+    .snap-section {
+      padding-inline: 20px;
+    }
 
-		.top-actions {
-			right: 20px;
-		}
-	}
+    .top-actions {
+      right: 20px;
+    }
+  }
 </style>
