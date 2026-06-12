@@ -74,11 +74,11 @@ const en = {
   cardName: "Yuya Kayama",
   cardRole: "Software Engineer",
   cardSkills: "TypeScript / Go / Rust / OCaml",
-  cardEmail: "yuyakayama23@gmail.com",
+  cardEmail: "[yuyakayama23@gmail.com](mailto:yuyakayama23@gmail.com)",
 
   heroEyebrow: "Portfolio",
   heroLead:
-    "Software engineer building reliable, secure, and thoughtful software. Based in Nice FR from Tokyo JP.",
+    "I am a software engineer based in France. Drawing on my experience at companies in Tokyo and France, I currently work as a freelance engineer on the design and development of web applications and IoT-related products.",
 
   heroLinkProjects: "Projects",
   heroLinkPublications: "Publications",
@@ -93,13 +93,13 @@ const en = {
   projectOneLabel: "Open Source",
   projectOneTitle: "react-native-websocket-self-signed",
   projectOneBody:
-    "A React Native library for connecting to WebSocket servers using self-signed certificates.",
+    "I implemented and published a React Native library for connecting to WebSocket servers that use self-signed certificates. It was designed with local network communication for IoT devices in mind.",
   projectOneLink: "View on GitHub",
 
   projectTwoLabel: "Startup Project",
-  projectTwoTitle: "Kid-friendly places map",
+  projectTwoTitle: "Kid-friendly places map app",
   projectTwoBody:
-    "A cross-platform Google Maps app developed in collaboration with a business professional and a designer for a startup project.",
+    "I am developing a cross-platform application using the Google Maps API in collaboration with a French entrepreneur and designer.",
   projectTwoStack: "React Native / Expo / NestJS / Google Maps API",
   projectTwoImageAlt: "Kid-friendly places map application screen",
 
@@ -108,25 +108,29 @@ const en = {
   publicationsBody: "Magazine contributions and technical writing.",
 
   publicationOneMeta: "Magazine",
-  publicationOneTitle: "Nikkei Software",
-  publicationOneBody: "Contributed a technical article.",
+  publicationOneTitle:
+    "Article contribution to Nikkei Software, January 2025 issue",
+  publicationOneBody:
+    "I contributed an article to the January 2025 issue of Nikkei Software, introducing an implementation example of a book management application. The article explains how to scan barcodes, obtain ISBNs, retrieve book information from the Rakuten Books API, and save and display the results.",
   publicationOneLink: "View on Amazon",
 
   publicationTwoMeta: "Magazine",
-  publicationTwoTitle: "Nikkei Software",
-  publicationTwoBody: "Contributed a second technical article.",
+  publicationTwoTitle:
+    "Article contribution to Nikkei Software, January 2024 issue",
+  publicationTwoBody:
+    "I contributed an article to the January 2024 issue of Nikkei Software, introducing an implementation example of an OCR translation application. The article explains how to extract text from images and use the DeepL Translation API to retrieve and save translated results.",
   publicationTwoLink: "View on Amazon",
 
   aboutEyebrow: "About",
   aboutTitle: "Engineering with security in mind.",
   aboutBody:
-    "I work across frontend, mobile, backend, and architecture. I mainly work with React, React Native, TypeScript, and Go, and I like products that are simple, fast, maintainable, and easy to operate. Started my career as a ",
+    "After graduating from university, I started my career at a startup developing ICT learning materials for tablet-based education. I then worked at a contract development company, where I contributed to multiple large-scale projects and gained experience across frontend, mobile, backend, and architecture. Later, I joined a French company developing smart building products, where I worked on the design and development of IoT products that combine hardware and software. Through products used in real-world operational environments, I deepened my knowledge of the IoT domain. Drawing on my experience in startups, contract development, IoT product development, and open-source software, I focus on building products that are simple, fast, maintainable, and easy to operate.",
   aboutSkills: "TypeScript / Go / Rust / OCaml / React / React Native / Astro",
 
   contactEyebrow: "Contact",
   contactTitle: "Feel free to reach out.",
   contactBody:
-    "I work as a freelance software engineer. If anything catches your interest, feel free to contact me about web and mobile app development, technical consultation, or architecture review.",
+    "As a freelance software engineer, I am open to inquiries about web and mobile application development, technical consultation, and architecture reviews.",
 
   contactLinkEmail: "Email",
   contactLinkGithub: "GitHub",

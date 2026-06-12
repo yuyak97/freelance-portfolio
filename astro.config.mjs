@@ -20,7 +20,7 @@ export default defineConfig({
     react(),
   ],
   i18n: {
-    defaultLocale: "ja",
+    defaultLocale: "en",
     locales: ["ja", "en"],
     routing: {
       prefixDefaultLocale: false,
