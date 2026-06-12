@@ -14,9 +14,11 @@ const ja = {
 
   heroLinkProjects: "Projects",
   heroLinkPublications: "Publications",
+  heroLinkBlog: "ブログ",
   heroLinkAbout: "About",
   heroLinkContact: "Contact",
   heroLinkGithub: "GitHub",
+  languageSwitchLabel: "English",
 
   projectsEyebrow: "Projects",
   projectsTitle: "Selected work",
@@ -64,6 +66,14 @@ const ja = {
 
   contactLinkEmail: "Email",
   contactLinkGithub: "GitHub",
+
+  blogTitle: "ブログ",
+  blogDescription: "ソフトウェア開発や技術についての記事です。",
+  blogPublished: "公開日",
+  blogUpdated: "更新日",
+  blogReadMore: "記事を読む",
+  blogBack: "ブログ一覧へ戻る",
+  blogEmpty: "公開中の記事はありません。",
 };
 
 const en = {
@@ -82,9 +92,11 @@ const en = {
 
   heroLinkProjects: "Projects",
   heroLinkPublications: "Publications",
+  heroLinkBlog: "Blog",
   heroLinkAbout: "About",
   heroLinkContact: "Contact",
   heroLinkGithub: "GitHub",
+  languageSwitchLabel: "日本語",
 
   projectsEyebrow: "Projects",
   projectsTitle: "Selected work",
@@ -134,6 +146,14 @@ const en = {
 
   contactLinkEmail: "Email",
   contactLinkGithub: "GitHub",
+
+  blogTitle: "Blog",
+  blogDescription: "Articles about software development and technology.",
+  blogPublished: "Published",
+  blogUpdated: "Updated",
+  blogReadMore: "Read article",
+  blogBack: "Back to blog",
+  blogEmpty: "No posts have been published yet.",
 };
 
 export const translations = {
@@ -142,6 +162,11 @@ export const translations = {
 };
 
 export type Locale = keyof typeof translations;
+
+export const locales = ["ja", "en"] as const satisfies readonly Locale[];
+
+export const isLocale = (value: string | undefined): value is Locale =>
+  locales.some((locale) => locale === value);
 
 export type TranslationSchema = typeof ja;
 

@@ -1,0 +1,198 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { formatBlogDate, type BlogLocale } from "@/lib/blog";
+import type { TranslationSchema } from "@/i18n";
+
+type Props = {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  lang: BlogLocale;
+  canonical?: URL;
+  alternates?: Array<{ lang: BlogLocale; href: URL }>;
+  t: TranslationSchema;
+};
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  tags = [],
+  lang,
+  canonical,
+  alternates = [],
+  t,
+} = Astro.props;
+---
+
+<Layout
+  title={`${title} | ${t.blogTitle}`}
+  {description}
+  {lang}
+  {canonical}
+  {alternates}
+>
+  <main class="blog-shell">
+    <article class="blog-post">
+      <a class="back-link" href={`/${lang}/blog`}>{t.blogBack}</a>
+
+      <header class="post-header">
+        <h1>{title}</h1>
+        <p class="description">{description}</p>
+        <dl class="dates">
+          <div>
+            <dt>{t.blogPublished}</dt>
+            <dd>
+              <time datetime={pubDate.toISOString()}>
+                {formatBlogDate(pubDate, lang)}
+              </time>
+            </dd>
+          </div>
+          {
+            updatedDate && (
+              <div>
+                <dt>{t.blogUpdated}</dt>
+                <dd>
+                  <time datetime={updatedDate.toISOString()}>
+                    {formatBlogDate(updatedDate, lang)}
+                  </time>
+                </dd>
+              </div>
+            )
+          }
+        </dl>
+        {
+          tags.length > 0 && (
+            <ul class="tag-list" aria-label="Tags">
+              {tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          )
+        }
+      </header>
+
+      <div class="post-content">
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .blog-shell {
+    min-height: 100svh;
+    padding: clamp(32px, 7vw, 88px) 0;
+    background:
+      radial-gradient(
+        circle at 18% 18%,
+        hsl(28 100% 58% / 0.1),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #080a0f, #111827 48%, #0b1120);
+  }
+
+  .blog-post {
+    width: min(100% - 32px, 760px);
+    margin-inline: auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: #ff914d;
+    font-weight: 700;
+  }
+
+  .post-header {
+    display: grid;
+    gap: 20px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid hsl(215 20% 76% / 0.18);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 7vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .description {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 0;
+  }
+
+  .dates div {
+    display: flex;
+    gap: 8px;
+  }
+
+  dt {
+    color: var(--color-muted);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tag-list li {
+    padding: 6px 10px;
+    border: 1px solid hsl(215 20% 76% / 0.22);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+  }
+
+  .post-content {
+    padding-top: 32px;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .post-content :global(h2),
+  .post-content :global(h3) {
+    margin: 2em 0 0.7em;
+    line-height: 1.25;
+  }
+
+  .post-content :global(p),
+  .post-content :global(ul),
+  .post-content :global(ol),
+  .post-content :global(pre) {
+    margin: 0 0 1.4em;
+  }
+
+  .post-content :global(a) {
+    color: #ff914d;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .post-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+</style>

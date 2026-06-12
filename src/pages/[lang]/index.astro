@@ -1,0 +1,33 @@
+---
+import Home from "@/components/Home.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getTranslations, isLocale, locales } from "@/i18n";
+
+export const getStaticPaths = () =>
+  locales.map((lang) => ({ params: { lang } }));
+
+const { lang } = Astro.params;
+
+if (!isLocale(lang)) {
+  return new Response("Not found", { status: 404 });
+}
+
+const t = getTranslations(lang);
+const canonical = Astro.site && new URL(`/${lang}`, Astro.site);
+const alternates = Astro.site
+  ? locales.map((locale) => ({
+      lang: locale,
+      href: new URL(`/${locale}`, Astro.site),
+    }))
+  : [];
+---
+
+<Layout
+  title={t.siteTitle}
+  description={t.siteDescription}
+  {lang}
+  {canonical}
+  {alternates}
+>
+  <Home locale={lang} t={t} />
+</Layout>

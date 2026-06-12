@@ -12,6 +12,12 @@ const { locale, t } = Astro.props;
 ---
 
 <main class="portfolio-shell" lang={locale}>
+  <nav class="top-actions" aria-label="Language">
+    <a class="locale-link" href={locale === "ja" ? "/en" : "/ja"}>
+      {t.languageSwitchLabel}
+    </a>
+  </nav>
+
   <aside class="card-panel" aria-label="Profile card">
     <BusinessCard
       label={t.cardLabel}
@@ -43,6 +49,7 @@ const { locale, t } = Astro.props;
         <a href="#about">{t.heroLinkAbout}</a>
         <a href="#projects">{t.heroLinkProjects}</a>
         <a href="#publications">{t.heroLinkPublications}</a>
+        <a href={`/${locale}/blog`}>{t.heroLinkBlog}</a>
         <a href="#contact">{t.heroLinkContact}</a>
         <a href="https://github.com/yuyak97" target="_blank" rel="noreferrer">
           {t.heroLinkGithub}
@@ -198,9 +205,10 @@ const { locale, t } = Astro.props;
   }
 
   .top-actions {
-    position: absolute;
+    position: fixed;
     top: 32px;
     right: min(8vw, 96px);
+    z-index: 10;
   }
 
   .locale-link {

@@ -1,0 +1,66 @@
+---
+import { render } from "astro:content";
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { getTranslations } from "@/i18n";
+import {
+  blogLocales,
+  getAllBlogPosts,
+  getBlogPost,
+  isBlogLocale,
+} from "@/lib/blog";
+
+export const getStaticPaths = async () => {
+  const posts = await getAllBlogPosts();
+
+  return posts.map((post) => ({
+    params: {
+      lang: post.data.lang,
+      slug: post.data.slug,
+    },
+  }));
+};
+
+const { lang, slug } = Astro.params;
+
+if (!isBlogLocale(lang) || !slug) {
+  return new Response("Not found", { status: 404 });
+}
+
+const post = await getBlogPost(lang, slug);
+
+if (!post) {
+  return new Response("Not found", { status: 404 });
+}
+
+const { Content } = await render(post);
+const t = getTranslations(lang);
+const canonical = Astro.site && new URL(`/${lang}/blog/${slug}`, Astro.site);
+const allPosts = await getAllBlogPosts();
+const alternates = Astro.site
+  ? blogLocales
+      .filter((locale) =>
+        allPosts.some(
+          (candidate) =>
+            candidate.data.lang === locale && candidate.data.slug === slug,
+        ),
+      )
+      .map((locale) => ({
+        lang: locale,
+        href: new URL(`/${locale}/blog/${slug}`, Astro.site),
+      }))
+  : [];
+---
+
+<BlogPostLayout
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+  {lang}
+  {canonical}
+  {alternates}
+  {t}
+>
+  <Content />
+</BlogPostLayout>

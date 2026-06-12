@@ -27,11 +27,4 @@ export default defineConfig({
     sitemap(),
     react(),
   ],
-  i18n: {
-    defaultLocale: "en",
-    locales: ["ja", "en"],
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
 });

@@ -5,20 +5,38 @@ import "../styles/global.css";
 type Props = {
   title: string;
   description?: string;
+  lang?: "ja" | "en";
+  canonical?: URL;
+  alternates?: Array<{
+    lang: "ja" | "en";
+    href: URL;
+  }>;
 };
 
-const { title = "Portfolio site", description = "Portfolio site" } =
-  Astro.props;
+const {
+  title = "Portfolio site",
+  description = "Portfolio site",
+  lang = "en",
+  canonical,
+  alternates = [],
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {
+      alternates.map((alternate) => (
+        <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />
+      ))
+    }
     <title>{title}</title>
   </head>
   <body>
