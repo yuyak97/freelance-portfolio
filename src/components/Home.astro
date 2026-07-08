@@ -150,6 +150,10 @@ const { locale, t } = Astro.props;
           {t.contactLinkGithub}
         </a>
       </nav>
+
+      <p class="contact-note">
+        <a href={`/${locale}/terms`}>{t.contactLinkTerms}</a>
+      </p>
     </section>
   </section>
 </main>
@@ -462,6 +466,27 @@ const { locale, t } = Astro.props;
   .publication-link:hover,
   .publication-link:focus-visible {
     color: #ff914d;
+    outline: none;
+  }
+
+  .contact-note {
+    margin-top: 8px;
+  }
+
+  .contact-note a {
+    color: hsl(215 20% 76%);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    opacity: 0.72;
+    transition: color 0.16s ease;
+  }
+
+  .contact-note a:hover,
+  .contact-note a:focus-visible {
+    color: #ff914d;
+    opacity: 1;
     outline: none;
   }
 

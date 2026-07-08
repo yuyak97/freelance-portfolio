@@ -135,19 +135,20 @@ const alternates = Astro.site
 
   .post-list {
     display: grid;
-    gap: 20px;
     margin: 0;
     padding: 0;
+    border-top: 1px solid hsl(215 20% 76% / 0.22);
     list-style: none;
+  }
+
+  .post-list > li {
+    border-bottom: 1px solid hsl(215 20% 76% / 0.22);
   }
 
   article {
     display: grid;
     gap: 16px;
-    padding: clamp(20px, 4vw, 32px);
-    border: 1px solid hsl(215 20% 76% / 0.18);
-    border-radius: var(--radius-lg);
-    background: hsl(220 30% 12% / 0.62);
+    padding: clamp(28px, 5vw, 44px) 0;
   }
 
   .post-meta {

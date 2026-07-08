@@ -1,0 +1,166 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getTranslations, isLocale, locales } from "@/i18n";
+
+export const getStaticPaths = () =>
+  locales.map((lang) => ({ params: { lang } }));
+
+const { lang } = Astro.params;
+
+if (!isLocale(lang)) {
+  return new Response("Not found", { status: 404 });
+}
+
+const t = getTranslations(lang);
+const canonical = Astro.site && new URL(`/${lang}/terms`, Astro.site);
+const alternates = Astro.site
+  ? locales.map((locale) => ({
+      lang: locale,
+      href: new URL(`/${locale}/terms`, Astro.site),
+    }))
+  : [];
+---
+
+<Layout
+  title={`${t.termsTitle} | ${t.siteTitle}`}
+  description={t.termsDescription}
+  {lang}
+  {canonical}
+  {alternates}
+>
+  <main class="terms-shell" lang={lang}>
+    <article class="terms-content">
+      <a class="back-link" href={`/${lang}`}>{t.termsBackLink}</a>
+
+      <header class="terms-header">
+        <p class="eyebrow">{t.termsUpdatedLabel}: {t.termsUpdatedDate}</p>
+        <h1>{t.termsTitle}</h1>
+        <p>{t.termsIntro}</p>
+      </header>
+
+      <div class="terms-sections">
+        {
+          t.termsSections.map((section) => (
+            <section>
+              <h2>{section.title}</h2>
+              <p>{section.body}</p>
+            </section>
+          ))
+        }
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .terms-shell {
+    min-height: 100svh;
+    background:
+      radial-gradient(
+        circle at 18% 16%,
+        hsl(28 100% 58% / 0.13),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 82% 72%,
+        hsl(220 90% 60% / 0.12),
+        transparent 34%
+      ),
+      linear-gradient(135deg, #080a0f, #111827 48%, #0b1120);
+    color: #f8fafc;
+    padding: 56px 24px 80px;
+  }
+
+  .terms-content {
+    width: min(100%, 800px);
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    margin-bottom: 48px;
+    padding: 8px 14px;
+    border: 1px solid hsl(215 20% 76% / 0.26);
+    border-radius: 999px;
+    color: #f8fafc;
+    background: hsl(220 30% 12% / 0.72);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+      transform 0.16s ease,
+      border-color 0.16s ease,
+      background 0.16s ease,
+      color 0.16s ease;
+  }
+
+  .back-link:hover,
+  .back-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: #ff914d;
+    color: #ff914d;
+    background: hsl(28 100% 58% / 0.16);
+    outline: none;
+  }
+
+  .terms-header,
+  .terms-sections,
+  .terms-sections section {
+    display: grid;
+    gap: 18px;
+  }
+
+  .terms-header {
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: #ff914d;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 7vw, 4.75rem);
+    line-height: 0.95;
+  }
+
+  h2 {
+    color: #f8fafc;
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  p {
+    color: hsl(215 20% 76%);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .terms-sections section {
+    padding-top: 24px;
+    border-top: 1px solid hsl(215 20% 76% / 0.18);
+  }
+
+  @media (max-width: 640px) {
+    .terms-shell {
+      padding: 32px 20px 64px;
+    }
+
+    .back-link,
+    .terms-header {
+      margin-bottom: 36px;
+    }
+  }
+</style>

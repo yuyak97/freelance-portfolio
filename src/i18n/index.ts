@@ -66,6 +66,45 @@ const ja = {
 
   contactLinkEmail: "Email",
   contactLinkGithub: "GitHub",
+  contactLinkTerms: "利用規約",
+
+  termsTitle: "利用規約",
+  termsDescription: "Yuya Kayama のポートフォリオサイトの利用規約です。",
+  termsBackLink: "ポートフォリオへ戻る",
+  termsUpdatedLabel: "最終更新日",
+  termsUpdatedDate: "2026年7月8日",
+  termsIntro:
+    "本利用規約は、このポートフォリオサイトの利用条件を定めるものです。本サイトを閲覧する方は、本規約に同意したものとみなします。",
+  termsSections: [
+    {
+      title: "掲載内容について",
+      body: "本サイトでは、運営者のプロフィール、制作実績、執筆実績、連絡先などを掲載しています。掲載内容は予告なく変更または削除する場合があります。",
+    },
+    {
+      title: "禁止事項",
+      body: "本サイトの運営を妨げる行為、不正アクセス、法令または公序良俗に反する行為、第三者または運営者の権利を侵害する行為を禁止します。",
+    },
+    {
+      title: "著作権",
+      body: "本サイトに掲載している文章、画像、コード、その他のコンテンツの権利は、特に明記がない限り運営者または正当な権利者に帰属します。無断転載、複製、改変、再配布を禁止します。",
+    },
+    {
+      title: "免責事項",
+      body: "本サイトの内容について、正確性や有用性を保証するものではありません。本サイトの利用により生じた損害について、運営者は責任を負いません。",
+    },
+    {
+      title: "外部リンク",
+      body: "本サイトには外部サイトへのリンクが含まれます。外部サイトの内容、利用条件、個人情報の取り扱いについて、運営者は責任を負いません。",
+    },
+    {
+      title: "連絡先",
+      body: "本規約に関するお問い合わせは、yuyakayama23 [at] gmail.com までご連絡ください。",
+    },
+    {
+      title: "規約の変更",
+      body: "運営者は、必要に応じて本規約を変更できるものとします。変更後の規約は、本サイトに掲載した時点で効力を生じます。",
+    },
+  ],
 
   blogTitle: "ブログ",
   blogDescription: "ソフトウェア開発や技術についての記事です。",
@@ -146,6 +185,45 @@ const en = {
 
   contactLinkEmail: "Email",
   contactLinkGithub: "GitHub",
+  contactLinkTerms: "Terms",
+
+  termsTitle: "Terms of Use",
+  termsDescription: "Terms of use for the portfolio site of Yuya Kayama.",
+  termsBackLink: "Back to portfolio",
+  termsUpdatedLabel: "Last updated",
+  termsUpdatedDate: "July 8, 2026",
+  termsIntro:
+    "These Terms of Use set out the conditions for using this portfolio site. By browsing this site, you are deemed to have agreed to these terms.",
+  termsSections: [
+    {
+      title: "Site Content",
+      body: "This site provides information such as the operator's profile, selected work, writing, and contact details. Content may be changed or removed without prior notice.",
+    },
+    {
+      title: "Prohibited Conduct",
+      body: "You must not interfere with the operation of this site, attempt unauthorized access, violate laws or public order, or infringe the rights of the operator or any third party.",
+    },
+    {
+      title: "Copyright",
+      body: "Unless otherwise stated, the text, images, code, and other content on this site belong to the operator or their rightful owners. Unauthorized reproduction, modification, redistribution, or republication is prohibited.",
+    },
+    {
+      title: "Disclaimer",
+      body: "The operator does not guarantee the accuracy or usefulness of the content on this site. The operator is not liable for any damages arising from the use of this site.",
+    },
+    {
+      title: "External Links",
+      body: "This site may include links to external websites. The operator is not responsible for the content, terms, or privacy practices of external websites.",
+    },
+    {
+      title: "Contact",
+      body: "For inquiries about these terms, please contact yuyakayama23 [at] gmail.com.",
+    },
+    {
+      title: "Changes to These Terms",
+      body: "The operator may update these terms as needed. Updated terms become effective when posted on this site.",
+    },
+  ],
 
   blogTitle: "Blog",
   blogDescription: "Articles about software development and technology.",
